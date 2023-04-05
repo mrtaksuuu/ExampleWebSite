@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+
+
+<form action="/action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="https://www.pngarts.com/files/5/User-Avatar-PNG-Transparent-Image.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Kullanıcı Adı</b></label>
+    <input type="text" placeholder="Kullanıcı Adını Giriniz" name="uname" required>
+
+    <label for="psw"><b>Şifre</b></label>
+    <input type="password" placeholder="Şifreyi Giriniz" name="psw" required>
+        
+    <button type="submit">Giriş</button>
+    <button type="submit" class="btn btn-primary" style="background-color: #8836f4;">Kayıt Ol</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Beni Hatırla
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#ffffff">
+    <button type="button" class="cancelbtn" >Geri</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+<script>
+  var kullanicilar=[
+    {email:"mail1@gmail.com", sifre:1234},
+    {email:"mail2@gmail.com", sifre:4567},
+    {email:"mail5@gmail.com", sifre:45678},
+  ]
+  var mesajlar=[
+    {email:"mail1@gmail.com",mesaj:"HERKESE GÜZEL BİR GÜN DİLİYORUM"},
+    {email:"mail2@gmail.com",mesaj:"HAYIRLI SABAHLAR"},
+    {email:"mail@gmail.com",mesaj:"günaydın"},
+    {email:"mail2@gmail.com",mesaj:"selam2ar"},
+  ]
+  
+  var uname=prompt("email adresiniz?")
+  var psw=prompt("şifreniz?")
+  
+  function kullaniciVarmi(uname, psw){
+    for(i=0;i<kullanicilar.length;i++){
+      if(kullanicilar[i].email==email && kullanicilar[i].psw==psw){
+        return true
+      }
+    }
+    return false;
+  }
+  
+  function giris(){
+    if(kullaniciVarmi(uname,psw)){
+      
+      console.log(mesajlar)
+  
+    } else{
+      console.log("Yanlış kullanıcı adı veya şifresi girdiniz")
+  
+    }
+  
+  }
+  
+  giris()
+</script>
+</body>
+
+</html>
